@@ -23,7 +23,6 @@ class Wizard(User):
     def attack(self):
         print(f'Attacking with power of {self.power}')
 
-
 class Archer(User):
     def __init__(self, name, num_arrows):
         self.name = name
@@ -41,5 +40,7 @@ wizard1 = Wizard('Merlin', 50)
 archer1 = Archer('Robin', 100)
 wizard1.attack()
 archer1.attack()
-
-
+print(isinstance(wizard1, Wizard)) #is wizard1 an instance of Wizard class?
+print(isinstance(wizard1, Archer)) #is wizard1 an instance of Archer class?
+print(isinstance(wizard1, User)) #is wizard1 an instance of User class?
+print(isinstance(wizard1, object)) #is wizard1 an instance of object base class that python comes with? 
