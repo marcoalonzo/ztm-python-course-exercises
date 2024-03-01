@@ -1,10 +1,25 @@
-#Dunder Methods
+# Object Introspection
 
-class Toy():
-    def __init__(self, color, age):
-        self.color = color
-        self.age = age
+class User:
+    def __init__(self, email):
+        self.email = email
 
-action_figure = Toy('red', 0)
-print(action_figure.__str__())
-print(str(action_figure))
+    def sign_in(self):
+        print('logged in')
+
+
+# Sub Class/ Child Class/ Derived Class
+class Wizard(User):
+    def __init__(self, name, power, email):
+        super().__init__(email)
+        # same as:: User.__init__(self, email)
+        self.name = name
+        self.power = power
+
+    def attack(self):
+        print(f'Attacking with power of {self.power}')
+
+
+wizard1 = Wizard('Merlin', 60, 'merlin@gmail.com')
+#dir() function will provide all methods and attributes that instances have access to
+print(dir(wizard1)) 
